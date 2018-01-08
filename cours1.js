@@ -6,27 +6,10 @@ function upperFirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 function clickDriver(item){
-	console.log(item);
-	document.getElementById("name").innerHTML = item.Nom.toUpperCase() + "\u0020" + item.Prenom.capitalize();
-	var contentDesc = document.getElementById("contentDesc"); 
-	contentDesc.innerHTML = null;
-
-	for(key in item){
-
-		if(key !== 'Nom' && key !== "Prenom"){
-			console.log(key);
-			// console.log(item.key);
-			console.log(item[key]);
-			var contentLi = document.createElement('li');
-			contentLi.innerHTML = key +":"+item[key];
-
-			contentDesc.appendChild(contentLi);
+	// console.log(item);
 
 
-		}
-
-
-	}
+	window.location.href = "http://localhost:8080/profil.html?id=" + item.ID
 	// document.getElementById("body").innerHTML="salut"
 }
 // step 1 : récupérer la liste:
@@ -63,10 +46,4 @@ maListe.forEach(function(item) {
 
 
 
-// option 2 (boucle), For
-// for (var i = 0; i < maListe.length; i++) {
-  	
-//   	console.log(maListe[i].Nom);
-
-// }
 
