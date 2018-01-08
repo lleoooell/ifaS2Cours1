@@ -44,6 +44,41 @@ maListe.forEach(function(item) {
 	monUl.appendChild(monLi);
 });
 
+var form = document.getElementById("form-id");
 
+
+form.addEventListener("submit", function(event){
+	console.log(form.elements);
+	event.preventDefault();
+	var newUser = {};
+
+	for(i = 0; i < form.elements.length; i++ ){
+		if(form.elements[i].value !== "submit"){
+			console.log(form.elements[i].value);
+			console.log(form.elements[i].name);
+			newUser[form.elements[i].name] = form.elements[i].value;
+
+			
+		}
+	}
+	console.log(newUser);
+	console.log(maListe);
+	maListe.push(newUser);
+	console.log(maListe);
+	var li = document.createElement("li");
+	li.innerHTML = newUser.Nom;
+	monUl.appendChild(li);
+
+})
+// document.getElementById("button-id").addEventListener("click", function () {
+//   // form.submit();
+
+//   console.log("form submit");
+//   console.log(form.elements);
+//   form.elements.forEach(function(input){
+//   	console.log(input.value);
+//   })
+
+// });
 
 
